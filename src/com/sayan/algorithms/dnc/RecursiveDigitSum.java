@@ -1,12 +1,7 @@
 package com.sayan.algorithms.dnc;
 
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class RecursiveDigitSum {
 	static int superDigit(String n, int k) {

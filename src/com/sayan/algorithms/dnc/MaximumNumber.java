@@ -21,8 +21,7 @@ class MaximumNumber {
 	public static void main(String[] args) {
 		try {
 			int[] inputArray = Arrays.stream(reader.readLine().split("\\s")).mapToInt(Integer::parseInt).toArray();
-			int currentIndex=0;
-			int maxNumber = findMax(inputArray,currentIndex,inputArray.length-1);
+			int maxNumber = findMax(inputArray,0,inputArray.length-1);
 			
 			System.out.println("The maximum number is: "+maxNumber);
 			

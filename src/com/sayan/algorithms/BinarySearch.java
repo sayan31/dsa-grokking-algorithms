@@ -33,6 +33,22 @@ class BinarySearch {
         //Return -1 if target is not found in the array
         return -1;
     }
+	
+	public int recursiveSearch(int[] nums, int target, int start, int end) {
+		if(start<=end) {
+			int middle = start+((end-start)/2);
+			
+			if (target==nums[middle]) {
+				return middle;			
+			}else if(target>nums[middle]) {
+				return recursiveSearch(nums,target,middle+1,end);
+			}else {
+				return recursiveSearch(nums,target,start,middle-1);
+			}			
+		}
+		return -1;
+		
+	}
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
@@ -55,11 +71,14 @@ class BinarySearch {
 			}
 			System.out.println("-------Array creation done--------");
 			
-			int finalIndex= bSearch.search(inputArray, noToSearch);
+			int finalIndex= bSearch.search(inputArray, noToSearch);		
+			int finalRecursiveIndex = bSearch.recursiveSearch(inputArray, noToSearch, 0, inputArray.length-1);
 			
-			String outputMessage = finalIndex==-1?"Number not found":"Number found at index "+finalIndex;
+			String outputMessage1 = finalIndex==-1?"Number not found":"Number found at index "+finalIndex;
+			String outputMessage2 = finalIndex==-1?"Number not found":"Number found at index "+finalRecursiveIndex;
 			
-			System.out.println(outputMessage);
+			System.out.println(outputMessage1);
+			System.out.println(outputMessage2);
 		}
 		in.close();		
 	}

@@ -19,8 +19,7 @@ public class QuickSort {
 
 			System.out.println("Sorted Array is: ");
 			printArray(inputArray);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		} catch (IOException e) {			
 			e.printStackTrace();
 		}		
 	}
@@ -69,7 +68,7 @@ public class QuickSort {
 	 * @return 
 	 */
 	private static int partition(int[] inputArray, int startIndex, int endIndex) {
-		// get the value of the element at the pivot point
+		// get the value of the element at the pivot point i.e. middle point.
 		int pivotValue = inputArray[startIndex+((endIndex-startIndex)/2)];
 		
 		/*repeat some steps until the endIndex crosses over the startIndex

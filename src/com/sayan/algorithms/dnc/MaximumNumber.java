@@ -9,11 +9,25 @@ class MaximumNumber {
 	private static final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	
 	
+	/**
+	 * @param inputArray
+	 * @param currentIndex
+	 * @param endIndex
+	 * @return the maximum number in the input array
+	 */
 	static int findMax(int inputArray[],int currentIndex,int endIndex) {
-		
+		/* The base case.
+		 * currentIndex is initially 0, i.e. the first array element.
+		 * The condition implies that all the elements in the array have been checked.
+		 */
 		if(currentIndex>=endIndex) {
 			return inputArray[currentIndex];
-		}else {
+		}
+		/* The recursive calls.
+		 * Return the greater of the value at currentIndex and the remaining elements 
+		 * of the array.
+		 */
+		else {
 			return Math.max(inputArray[currentIndex], findMax(inputArray, ++currentIndex, endIndex));
 		}
 	} 
